@@ -1,0 +1,29 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html,
+body {
+   font-size: 14px;
+   line-height: 1.5;
+   /* font-family: helvetica; */
+}
+
+h1{
+   color: #499557 !important;
+}
+.error {
+   color: #ff0000;
+   font-size: 12px;
+   font-style: italic;
+}
+
+#btn {
+   background-color: green !important;
+}
+#submit{
+   background-color: #499557 !important;
+   color: #fff !important;
+}
