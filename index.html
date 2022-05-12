@@ -7,6 +7,8 @@
       <title>State selection</title>
       <!-- bootstrap css -->
       <link rel="stylesheet" href="./css/bootstrap.min.css" />
+      <!-- datatable -->
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
       <!-- custom css -->
       <link rel="stylesheet" href="./css/style.css" />
    </head>
@@ -61,7 +63,7 @@
 
                                     <div class="col-sm-4">
                                        <label for="lastName" class="form-label">Last name</label>
-                                       <input type="text" class="form-control" id="lastName" name="lastname" placeholder="" value="" required />
+                                       <input type="text" class="form-control" id="lastname" name="lastname" placeholder="" value="" required />
                                     </div>
                                     <!-- othername -->
                                     <div class="col-sm-4">
@@ -85,8 +87,8 @@
                                     </div>
                                     <!-- phone -->
                                     <div class="col-md-4">
-                                       <label for="phone" class="form-label">Phone number <em><small class="text-muted">(08123456789)</em></small></label>
-                                       <input type="tel" maxlength="11" value="" requiredF class="form-control" id="phone" name="phone" />
+                                       <label for="phone" class="form-label">Phone number <em class="text-muted">(08123456789)</em></label>
+                                       <input type="tel" maxlength="11" value="" required class="form-control" id="phone" name="phone" />
                                     </div>
                                     <!-- country -->
                                     <div class="col-md-4">
@@ -95,15 +97,15 @@
                                     </div>
 
                                     <div class="col-md-4">
-                                       <label for="state" class="form-label">State</label>
-                                       <select class="form-select" id="state" name="state" required>
+                                       <label for="states" class="form-label">State</label>
+                                       <select class="form-select" id="states" name="states" required>
                                           <option value="">Choose...</option>
                                        </select>
                                     </div>
 
                                     <div class="col-md-4">
                                        <label for="state" class="form-label">LGA</label>
-                                       <select class="form-select" id="state" name="lga" required>
+                                       <select class="form-select" id="lga" name="lga" required>
                                           <option value="">Choose...</option>
                                        </select>
                                     </div>
@@ -118,16 +120,46 @@
                      </main>
                   </div>
 
-                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum soluta inventore quos harum voluptatum ipsum non placeat omnis. Fugiat, quibusdam blanditiis esse ea nisi quasi sequi sit iste ab, temporibus aut? Voluptates, eum sint iste sapiente explicabo tempore, sed doloremque modi eaque fugiat, veniam labore tempora est aliquid optio distinctio. ...</div>
+                  <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                     <div class="table-responsive dataTables_wrapper">
+                        <table id="table_id" class="display text-center">
+                           <!-- Table Header -->
+                           <thead class="text-center">
+                              <tr>
+                                 <th scope="col" class="pb-3">
+                                    <input class="form-check-input p-2" type="checkbox" value="" id="flexCheckDefault" />
+                                 </th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">First name</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Last Name</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Middle Name</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Dob</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Sex</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Phone</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">Country</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">State</th>
+                                 <th scope="col" class="pb-3 fs-6 text-center text-secondary fw-bold">LGA</th>
+                              </tr>
+                           </thead>
+                           <tbody id="tbody">
+                              <!-- 1st row -->
+                           </tbody>
+                        </table>
+                     </div>
+                     <!-- Table Content End-->
+                  </div>
                </div>
             </div>
          </div>
       </main>
 
       <script src="./js/bootstrap.bundle.js"></script>
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+      <script src="./js/jquery-3.6.0.min.js"></script>
+      <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> -->
+      <script src="./js/jquery.validate.js"></script>
+      <script src="./js/datatables.min.js"></script>
+      <script src="./js/dataTables.responsive.min.js"></script>
+      <!-- <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script> -->
 
-      <script src="./js/main.js"></script>
+      <script type="module" src="./js/main.js"></script>
    </body>
 </html>
