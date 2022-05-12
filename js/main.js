@@ -57,6 +57,9 @@ $(function () {
 let tbody = $("#tbody");
 $("#register").on("submit", function (e) {
    e.preventDefault();
+
+   tbody.html(`<tr></tr>`);
+
    tbody.append(`<tr class="border-bottom">
    <th scope="row">
       <input class="form-check-input ms-2 p-2" type="checkbox" value="" id="flexCheckDefault" />
@@ -66,12 +69,13 @@ $("#register").on("submit", function (e) {
    <td class="fs-6 fw-bold">${$("#lastname").val()}</td>
    <td class="fs-6 fw-bold">${$("#othername").val()}</td>
    <td class="fs-6 fw-bold">${$("#dob").val()}</td>
-   <td class="fs-6 fw-bold">${$("#")}</td>
-   <td class="fs-6 fw-bold">Phone</td>
-   <td class="fs-6 fw-bold">Country</td>
-   <td class="fs-6 fw-bold">State</td>
-   <td class="fs-6 fw-bold">LGA</td>
+   <td class="fs-6 fw-bold">${$("#sex").val()}</td>
+   <td class="fs-6 fw-bold">${$("#phone").val()}</td>
+   <td class="fs-6 fw-bold">${$("#country").val()}</td>
+   <td class="fs-6 fw-bold">${$("#states").val()}</td>
+   <td class="fs-6 fw-bold">${$("#lga").val()}</td>
   </tr>`);
+   $("#register").trigger("reset");
 });
 
 // return $("#states").append(`<option value="">${Object.keys(el)}</option>`);
