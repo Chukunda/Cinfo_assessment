@@ -74,8 +74,17 @@ $("#register").on("submit", function (e) {
    <td class="fs-6 fw-bold">${$("#country").val()}</td>
    <td class="fs-6 fw-bold">${$("#states").val()}</td>
    <td class="fs-6 fw-bold">${$("#lga").val()}</td>
+   <td class="fs-6"><button type="button" class="btn btn-secondary" id="delete">Delete</button></td>
+   <tr>
+   
+</tr>
   </tr>`);
+   // to reset the form
    $("#register").trigger("reset");
+
+   $("#delete").click(function (e) {
+      this.closest("tr").remove();
+   });
 });
 
 // return $("#states").append(`<option value="">${Object.keys(el)}</option>`);
