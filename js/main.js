@@ -46,12 +46,25 @@ $(function () {
       recordsTotal: 50,
    });
 
-   allStates.forEach((el) => {
-      let diffState = Object.keys(el);
-      for (let i = 0; i <= diffState.length; i++) {
-         $("#states").append(`<option>${diffState[i]}</option>`);
-      }
-   });
+   (() => {
+      allStates.forEach((el) => {
+         let diffState = Object.keys(el);
+         //  console.log(diffState);
+
+         for (let i = 0; i <= diffState.length; i++) {
+            $("#states").append(`<option>${diffState[i]}</option>`);
+         }
+
+         $("#states").change(function () {
+            let lga = "";
+            allStates.forEach(function (el) {
+               lga += `<option>${el}</option>`;
+            });
+            $("lga").html(lga);
+            console.log(lga);
+         });
+      });
+   })();
 });
 
 let tbody = $("#tbody");
