@@ -46,23 +46,45 @@ $(function () {
       recordsTotal: 50,
    });
 
-   (() => {
-      allStates.forEach((el) => {
-         let diffState = Object.keys(el);
-         //  console.log(diffState);
+   // (() => {
+   //    allStates.forEach((el) => {
+   //       let diffState = Object.keys(el);
+   //       //  console.log(diffState);
 
-         for (let i = 0; i <= diffState.length; i++) {
-            $("#states").append(`<option>${diffState[i]}</option>`);
+   //       for (let i = 0; i <= diffState.length; i++) {
+   //          $("#states").append(`<option>${diffState[i]}</option>`);
+   //       }
+
+   //       $("#states").change(function () {
+   //          let lga = "";
+   //          allStates.forEach(function (el) {
+   //             lga += `<option>${el}</option>`;
+   //          });
+   //          $("lga").html(lga);
+   //          console.log(lga);
+   //       });
+   //    });
+   // })();
+
+   (function () {
+      allStates.forEach(function (el) {
+         let onlyStates = Object.keys(el);
+         // console.log(onlyStates);
+         for (const cp in onlyStates) {
+            // console.log(onlyStates[cp])
+            $("#states").append(`<option>${onlyStates[cp]}</option>`);
          }
 
-         $("#states").change(function () {
-            let lga = "";
-            allStates.forEach(function (el) {
-               lga += `<option>${el}</option>`;
-            });
-            $("lga").html(lga);
-            console.log(lga);
-         });
+         // $("#states").change(function () {
+         //    let output = "";
+
+         //    // to loop over the array that hold the second list
+
+         //    // allStates[$(this.val)].forEach(function (st) {
+         //    //    output += `<option>${st}</option>`;
+         //    // });
+         //    $("#lga").html(output);
+         // });
       });
    })();
 });
@@ -92,6 +114,7 @@ $("#register").on("submit", function (e) {
    
 </tr>
   </tr>`);
+
    // to reset the form
    $("#register").trigger("reset");
 
@@ -99,7 +122,3 @@ $("#register").on("submit", function (e) {
       this.closest("tr").remove();
    });
 });
-
-// return $("#states").append(`<option value="">${Object.keys(el)}</option>`);
-//   let diffState = Object.keys(el)
-//   for
